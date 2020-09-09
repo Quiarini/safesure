@@ -1,0 +1,7 @@
+{
+  "name": "safe-sure",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
