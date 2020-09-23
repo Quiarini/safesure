@@ -1,0 +1,11 @@
+// :host(.button-solid) {
+//     --background: var(--ion-color-primary, #000000);
+//     --color: var(--ion-color-primary-contrast, #fff);
+// }
+.panico{
+    height: 200px;
+    display: flex;
+    align-items: baseline;
+    border-radius: 50px;
+    font-size: large;
+}
