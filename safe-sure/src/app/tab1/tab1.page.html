@@ -1,8 +1,9 @@
 <link href="tab1.page.scss">
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Início
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +16,30 @@
   </ion-header> -->
 
   <!-- <ion-footer > -->
+
+    <ion-grid class="options" >
+      <ion-row >
+        <ion-col >
+          <div>
+            <ion-fab-button color="medium">Share</ion-fab-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-fab-button color="medium">People</ion-fab-button>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-fab-button color="medium">Profile</ion-fab-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
     <ion-button class="panico" color="dark">Botão de Pânico</ion-button>
+    <app-share></app-share>
+
   <!-- </ion-footer> -->
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>

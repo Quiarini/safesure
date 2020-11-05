@@ -13,7 +13,16 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  }
+  },
+  {
+    path: 'share',
+    loadChildren: () => import('./share/share.module').then( m => m.SharePageModule)
+  },
+  /*{
+    path: 'map',
+    loadChildren: () => import('./share/share.module').then( m => m.SharePageModule)
+  }*/
+
 
 ];
 @NgModule({
