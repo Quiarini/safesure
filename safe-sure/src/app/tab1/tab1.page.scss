@@ -2,11 +2,15 @@
 //     --background: var(--ion-color-primary, #000000);
 //     --color: var(--ion-color-primary-contrast, #fff);
 // }
+:root {
+    --main-bg-color: #195e83;
+  }
 
 .content{
     background-color: black;
 }
 .panico{
+    
     height: 100px;
     width: auto;
     margin: 10px;
