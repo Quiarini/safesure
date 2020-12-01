@@ -1,9 +1,74 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Cadastro</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
+  <ion-app>
 
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Cadastro</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <form>
+
+        <ion-item>
+          <ion-label>Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.nome" name="nome" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sobrenome</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.sobrenome" name="sobrenome" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>CPF</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.CPF" name="cpf" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Telefone</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.telefone" name="telefone" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="cadastroUsuario.senha1" name="senha" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Confirmar senha</ion-label>
+          <ion-input type="password" [(ngModel)]="cadastroUsuario.senha2" name="confSenha" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>CEP</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.cep" name="cep" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Endereço</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.endereco" name="endereco" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Numero</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.numero" name="numero" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Complemento</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroUsuario.complemento" name="complemento"></ion-input>
+        </ion-item>
+
+        <ion-button class="primary-contrast" (click)="cadastrarUsuario()">Cadastrar</ion-button>
+
+      </form>
+    </ion-content>
+
+  </ion-app>
 </ion-content>

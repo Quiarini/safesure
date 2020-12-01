@@ -8,7 +8,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="dark">
   <!-- <ion-header collapse="condense"></ion-header>
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
@@ -19,19 +19,19 @@
 
     <ion-grid class="options" >
       <ion-row >
-        <ion-col >
-          <div>
-            <ion-fab-button color="medium">Share</ion-fab-button>
+        <ion-col class="primary-contrast">
+          <div >
+            <ion-fab-button >Share</ion-fab-button>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <ion-fab-button color="medium">People</ion-fab-button>
+            <ion-fab-button class="primary-contrast">People</ion-fab-button>
           </div>
         </ion-col>
         <ion-col>
           <div>
-            <ion-fab-button color="medium">Profile</ion-fab-button>
+            <ion-fab-button class="primary-contrast">Profile</ion-fab-button>
           </div>
         </ion-col>
       </ion-row>
@@ -42,7 +42,6 @@
     </div> -->
     <ion-button class="panico">Botão de Pânico</ion-button>
     <!-- color="dark" -->
-    <app-share></app-share>
 
   <!-- </ion-footer> -->
   <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->

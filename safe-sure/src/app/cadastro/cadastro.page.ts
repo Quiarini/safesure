@@ -1,4 +1,6 @@
+import { CadastroUsuario } from './../../share/models/cadastro-usuario.model';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-cadastro',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroPage implements OnInit {
 
+  cadastroUsuario: CadastroUsuario;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.cadastroUsuario = new CadastroUsuario();
+    console.log(this.cadastrarUsuario);
+  }
+
+  cadastrarUsuario(){
+
+    console.log("cadastrado com sucesso");
   }
 
 }

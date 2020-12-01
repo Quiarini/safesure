@@ -1,0 +1,47 @@
+[
+    {
+        "CPF": "12312312312",
+        "nome": "pessoa1",
+        "sobrenome": "pessoa1",
+        "telefone": [
+            "12345678"
+        ],
+        "email": "teste1@teste.com",
+        "senha1": "teste1",
+        "senha2": "teste1",
+        "cep": "06325987",
+        "endereco": "rua xpto",
+        "complemento": "abc",
+        "numero": "1"
+    },
+    {
+        "CPF": "12312312313",
+        "nome": "pessoa2",
+        "sobrenome": "pessoa2",
+        "telefone": [
+            "12345678"
+        ],
+        "email": "teste2@teste.com",
+        "senha1": "teste2",
+        "senha2": "teste2",
+        "cep": "06325987",
+        "endereco": "rua xpto",
+        "complemento": "abc",
+        "numero": "1"
+    },
+    {
+        "CPF": "12312312314",
+        "nome": "pessoa3",
+        "sobrenome": "pessoa3",
+        "telefone": [
+            "12345678"
+        ],
+        "email": "teste3@teste.com",
+        "senha1": "teste3",
+        "senha2": "teste3",
+        "cep": "06325987",
+        "endereco": "rua xpto",
+        "complemento": "abc",
+        "numero": "1"
+    }
+]

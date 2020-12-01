@@ -1,36 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-  <form class="form" action="">
-    <div class="card">
-        <div class="card-top">
-            <img class="imglogin" src="img/user.png" alt="">
-            <h2 class="title">Login</h2>
-            <p>Seja bem-vindo(a)!</p>
-        </div>
+    <ion-app>
 
-        <div class="card-group">
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Digite seu email" required>
-        </div>
+        <ion-header translucent>
+            <ion-toolbar>
+                <ion-title>Cadastro</ion-title>
+            </ion-toolbar>
+        </ion-header>
 
-        <div class="card-group">
-            <label>Senha</label>
-            <input type="password" name="senha" placeholder="Digite sua senha" required>
-        </div>
+        <ion-content fullscreen>
+            <form>
 
-        <div class="card-group">
-            <label><input type="checkbox"> Lembre-me</label>
-        </div>
+                <ion-item>
+                    <ion-label>E-mail</ion-label>
+                    <ion-input type="text" [(ngModel)]="loginUsuario.email" name="email" required></ion-input>
+                </ion-item>
 
-        <div class="card-group btn">
-            <button type="submit">ACESSAR</button>
-        </div>
-    </div>
-</form>
+                <ion-item>
+                    <ion-label>Senha</ion-label>
+                    <ion-input type="password" [(ngModel)]="loginUsuario.senha1" name="senha" required></ion-input>
+                </ion-item>
 
+                <ion-button class="primary-contrast" (click)="realizarLogin()">Cadastrar</ion-button>
+            </form>
+        </ion-content>
+
+    </ion-app>
 </ion-content>
