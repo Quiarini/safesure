@@ -1,69 +1,12 @@
-<ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-button [routerLink]="['/home']" fill="clear">
-        <ion-icon slot="icon-only" name="home"></ion-icon>
-      </ion-button>
-    </ion-toolbar>
-  </ion-header>
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>
+      Compartilhar localização
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-content class="ion-padding">
-    <div class="menu-content">
-        <ion-icon name="compass" color="primary"></ion-icon>
-        <ion-label>DIREÇÕES</ion-label>
-        </div>
-
-    <div class="grid-content">
-      <ion-item class="no-padding-top">
-      <ion-input placeholder="Para onde quer ir?"></ion-input>
-      <ion-button fill="clear" (click)="myFunction()">
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-    </ion-item>
-    </div>
-
-
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-      <agm-marker
-        [latitude]="lat"
-        [longitude]="lng"
-        (markerClick)="onMarkerClick()"
-      ></agm-marker>
-    </agm-map>
-
-    <div class="center-block">
-      <div class="imagem" *ngIf="controleImagem">
-        <img class="center-block" src="assets/img/aviso.PNG"  >
-      </div>
-    </div>
-
-
-
-  </ion-content>
-
-  <ion-footer>
-    <ion-toolbar>
-     <ion-tabs>
-
-  <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="tab1" [routerLink]="['/linhas']">
-      <ion-icon name="analytics" color="primary"></ion-icon>
-      <ion-label>Linhas</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab2" [routerLink]="['/direcoes']">
-      <ion-icon name="compass" color="primary"></ion-icon>
-      <ion-label>Direções</ion-label>
-    </ion-tab-button>
-
-    <ion-tab-button tab="tab3" [routerLink]="['/pontos']">
-      <ion-icon name="location" color="primary"></ion-icon>
-      <ion-label>Pontos</ion-label>
-    </ion-tab-button>
-  </ion-tab-bar>
-
-</ion-tabs>
-    </ion-toolbar>
-  </ion-footer>
-  
-</ion-app>
+<ion-content>
+  <div #map id='map'>
+  </div>
+</ion-content>

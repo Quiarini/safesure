@@ -9,11 +9,17 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AgmCoreModule } from "@agm/core";
+import { AgmCoreModule } from '@agm/core';
 import { environment } from 'src/environments/environment';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { LoginSsComponent } from './login-ss/login-ss.component';
+
+
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LoginSsComponent],
   entryComponents: [],
   imports: [
     BrowserModule, 
@@ -21,14 +27,17 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule, 
     HttpClientModule, 
     AgmCoreModule.forRoot({
-    apiKey: environment.googleMapsAPIKey
+    apiKey: environment.googleMapsAPIKey,
   }),
+
 ],
 
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Geolocation,
+    NativeGeocoder
   ],
   bootstrap: [AppComponent]
 })

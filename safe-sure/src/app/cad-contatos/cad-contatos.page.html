@@ -1,0 +1,44 @@
+<ion-content>
+  <ion-app>
+
+    <ion-header translucent>
+      <ion-toolbar>
+        <ion-title>Cadastro de Contatos de Segurança</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="dismissModal()">
+            Fechar
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content fullscreen>
+      <form>
+
+        <ion-item>
+          <ion-label>Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroContato.nome" name="nome" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sobrenome</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroContato.sobrenome" name="sobrenome" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Telefone</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroContato.telefone" name="telefone" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>E-mail</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroContato.email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-button class="cadastro-button" (click)="cadastrarContato()">Cadastrar</ion-button>
+
+      </form>
+    </ion-content>
+
+  </ion-app>
+</ion-content>

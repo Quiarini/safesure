@@ -21,7 +21,9 @@ export class CadastroPage implements OnInit {
 
   cadastrarUsuario(){
 
+    alert('Cadastro efetivado')
     console.log("cadastrado com sucesso");
+    this.cadastroUsuario = new CadastroUsuario();
   }
 
 }

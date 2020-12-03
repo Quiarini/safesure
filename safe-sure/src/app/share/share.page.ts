@@ -1,9 +1,13 @@
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { NavController, ToastController, Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+
+declare var google: any;
 
 @Component({
   selector: 'app-share',
@@ -12,74 +16,48 @@ import { map } from 'rxjs/operators';
 })
 export class SharePage implements OnInit {
 
-  lat: number;
-  lng: number;
-  address: any;
+  map: any;
+  marker: any;
 
-  controleImagem: boolean;
+
   constructor(
-    private http: HttpClient,
-    public toastController: ToastController
+    public navCtrl: NavController,
+    private nativeGeocoder: NativeGeocoder,
+    public geolocation: Geolocation,
+    private platform: Platform
   ) { }
 
   ngOnInit() {
-    this.getCurrentLocation();
-    console.log(this.controleImagem);
+
+    this.ionView();
   }
 
-  myFunction() {
-
-    this.controleImagem = true;
-  }
-
-  getCurrentLocation() {
-    Plugins.Geolocation.getCurrentPosition().then(result => {
-      this.lat = result.coords.latitude;
-      this.lng = result.coords.longitude;
-
-      // calling getAddress function to decode the address
-
-      this.getAddress(this.lat, this.lng).subscribe(decodedAddress => {
-        this.address = decodedAddress;
-        console.log(this.address);
-      });
+  ionView(){
+    this.platform.ready().then(() => {
+      this.initPage();
     });
   }
 
-  private getAddress(lat: number, lan: number) {
-    return this.http
-      .get<any>(
-        `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lan}&key=${
-          environment.googleMapsAPIKey
-        }`
-      )
-      .pipe(
-        map(geoData => {
-          if (!geoData || !geoData.results || geoData.results === 0) {
-            return null;
-          }
-          return geoData.results[0].formatted_address;
-        })
-      );
-  }
-
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: this.address,
-
-      position: 'middle',
-      buttons: [
-        {
-          icon: 'close-circle',
-          role: 'cancel'
-        }
-      ]
+  initPage(){
+    this.geolocation.getCurrentPosition().then(result => {
+      this.loadMap(result.coords.latitude, result.coords.longitude);
     });
-    toast.present();
   }
 
-  onMarkerClick() {
-    this.presentToast();
-  }
+  loadMap(latitude, longitude){
 
+    const latLng = new google.maps.LatLng(latitude, longitude);
+
+    const mapOption = {
+      center: latLng,
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      disableDefaultUI: true
+    };
+
+    const element = document.getElementById('map');
+
+    this.map = new google.maps.Map(element, mapOption);
+
+  }
 }

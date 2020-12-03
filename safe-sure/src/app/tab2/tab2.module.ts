@@ -1,3 +1,4 @@
+import { CadContatosPage } from './../cad-contatos/cad-contatos.page';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     ExploreContainerComponentModule,
     Tab2PageRoutingModule
   ],
-  declarations: [Tab2Page]
+  declarations: [Tab2Page, CadContatosPage],
+  entryComponents: [CadContatosPage]
 })
 export class Tab2PageModule {}

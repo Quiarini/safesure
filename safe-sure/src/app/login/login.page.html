@@ -3,7 +3,7 @@
 
         <ion-header translucent>
             <ion-toolbar>
-                <ion-title>Cadastro</ion-title>
+                <ion-title>Login</ion-title>
             </ion-toolbar>
         </ion-header>
 
@@ -20,7 +20,8 @@
                     <ion-input type="password" [(ngModel)]="loginUsuario.senha1" name="senha" required></ion-input>
                 </ion-item>
 
-                <ion-button class="primary-contrast" (click)="realizarLogin()">Cadastrar</ion-button>
+                <ion-button class="cadastro-button" (click)="realizarLogin()">Login</ion-button>
+                <ion-button class="cadastro-button" (click)="goToCadastro()">Cadastrar</ion-button>
             </form>
         </ion-content>
 

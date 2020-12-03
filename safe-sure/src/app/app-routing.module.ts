@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginSsComponent } from './login-ss/login-ss.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,12 @@ const routes: Routes = [
     path: 'share',
     loadChildren: () => import('./share/share.module').then( m => m.SharePageModule)
   },
+  {
+    path: 'cad-contatos',
+    loadChildren: () => import('./cad-contatos/cad-contatos.module').then( m => m.CadContatosPageModule)
+  },
+  { path: 'mapa', component: LoginSsComponent },
+
   /*{
     path: 'map',
     loadChildren: () => import('./share/share.module').then( m => m.SharePageModule)

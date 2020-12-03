@@ -8,6 +8,8 @@ import { SharePageRoutingModule } from './share-routing.module';
 
 import { SharePage } from './share.page';
 import { AgmCoreModule } from '@agm/core';
+import { environment } from 'src/environments/environment';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
   imports: [
@@ -15,8 +17,13 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     IonicModule,
     SharePageRoutingModule,
-    AgmCoreModule
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleMapsAPIKey
+    }),
   ],
-  declarations: [SharePage]
+  declarations: [SharePage],
+  providers: [
+    Geolocation,
+  ]
 })
 export class SharePageModule {}

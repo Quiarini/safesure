@@ -10,6 +10,7 @@ export class UsuarioServiceService {
 
   url = './assets/documents/usuarios.json';
 
+
   constructor(
     private httpClient: HttpClient
   ) { }

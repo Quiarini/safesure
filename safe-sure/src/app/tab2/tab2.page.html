@@ -2,7 +2,9 @@
   <ion-app>
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Contatos</ion-title>
+        <ion-title>
+          Contatos
+        </ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -15,13 +17,14 @@
         <ion-item *ngFor="let contacts of contatoSegurancaList, let i of index">
           <ion-icon name="person-outline"></ion-icon>
           <ion-label>
-            <h2>{{contacts.nome}} {{contacts.sobrenome}}</h2>
-            <h3>Telefone: {{contacts.telefone}}</h3>
+            <p>{{contacts.nome}} {{contacts.sobrenome}}</p>
+            <p>Telefone: {{contacts.telefone}}</p>
             <p>E-mail: {{contacts.email}}</p>
           </ion-label>
         </ion-item>
       </ion-list>
-      <ion-fab class="primary-contrast" vertical="bottom" horizontal="end" slot="fixed" size="small">
+      <ion-fab class="primary-contrast" vertical="bottom" horizontal="end" slot="fixed" size="small"
+        (click)="cadastrarContato()">
         <ion-fab-button>+
         </ion-fab-button>
       </ion-fab>

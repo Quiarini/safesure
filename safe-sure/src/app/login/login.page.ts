@@ -48,7 +48,6 @@ export class LoginPage implements OnInit {
 
     else{
 
-      console.log("dentro do else");
   for(var i=0; i< this.usuarioLogado.length; i++){
     if(this.usuarioLogado[i].senha1 === this.loginUsuario.senha1){
 
@@ -60,6 +59,10 @@ export class LoginPage implements OnInit {
   }
     }
 
+  }
+
+  goToCadastro(){
+    this.router.navigate(['/tabs/cadastro'])
   }
 
 }
